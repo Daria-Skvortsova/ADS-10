@@ -17,12 +17,15 @@ std::vector<char> perestanovki;
 int currentPerestanovka = 0;
 int needPerestanovka = 0;
 
-std::vector<char> deleteElem(std::vector<char> array, char value) {
-std::vector<char>::iterator position = std::find(array.begin(), array.end(), value);
-if (position != array.end())
-array.erase(position);
-return array;
-}
+  std::vector<char> deleteElem(std::vector<char> array, char value) {
+    std::vector<char> newVector;
+    for (int i = 0; i < array.size(); i++) {
+      if (array[i] != value) {
+        newVector.push_back(array[i]);
+      }
+    }
+    return newVector;
+  }
 
 std::vector<list> createlist(std::vector<char> vec, list* head) {
 std::vector<list> tmp_v;
